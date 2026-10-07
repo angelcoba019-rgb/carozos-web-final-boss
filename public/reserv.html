@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas | Carozo's Chicken</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+
+    <!-- encabezado -->
+    <header class="encabezado">
+        <div class="logo">
+            <h2>Carozo's Chicken</h2>
+        </div>
+        
+        <nav class="navegacion">
+            <a href="index.html">Inicio</a>
+            <a href="carta.html">Nuestra Carta</a>
+            <a href="reserv.html">Reservas</a>
+        </nav>
+    </header>
+
+    <!-- formulario -->
+    <main>
+        <section class="bienvenida" style="padding: 60px 20px 20px;">
+            <h1>Reserva tu mesa</h1>
+            <p>Asegura tu lugar para disfrutar con la familia o amigos.</p>
+        </section>
+
+        <section class="seccion-reserva">
+            <div class="contenedor-formulario">
+                
+                <form class="formulario" action="/procesar" method="POST">
+                    
+                    <div class="grupo-input">
+                        <label for="nombre">Nombre completo:</label>
+                        <input id="nombre" type="text" name="nombre" required placeholder="Ej. Juan Pérez">
+                    </div>
+
+                    <!-- fecha y hora en una linea pa mas profesionalismo -->
+                    <div class="fila-inputs">
+                        <div class="grupo-input">
+                            <label for="fecha">Fecha de reserva:</label>
+                            <input id="fecha" type="date" name="fecha" required>
+                        </div>
+                        <div class="grupo-input">
+                            <label for="hora">Hora:</label>
+                            <input type="time" id="hora" name="hora" required>
+                        </div>
+                    </div>
+
+                    <div class="grupo-input">
+                        <label for="personas">Número de personas:</label>
+                        <input type="number" id="personas" name="personas" min="1" max="10" required>
+                    </div>
+
+                    <div class="grupo-input">
+                        <label for="mensaje">Información adicional (Opcional):</label>
+                       <textarea id="mensaje" name="mensaje" placeholder="Ejm: Cumpleaños, requerimientos especiales, alergias..."></textarea>
+                    </div>
+                    
+                    <!-- reutilizamos los botones -->
+                    <button type="submit" class="boton-whatsapp" style="width: 100%; border: none; cursor: pointer; font-size: 18px;">
+                        Confirmar Reserva
+                    </button>
+                    
+                    <p class="aviso-privacidad"><small><em>Tus datos serán usados solo para gestionar tu reserva en el restaurante.</em></small></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- pie -->
+    <footer class="pie-pagina">
+        <h3>Contacto y Ubicación</h3>
+        <p><strong>Dirección:</strong> Av. Independencia 706, Urb. Santa Elena, Cajamarca</p>
+        <p><strong>Teléfonos:</strong> xxxxxxxxxxx / xxxxxxxxxxx</p>
+        <p><strong>Horario de atención:</strong> Lunes a Domingo de 17:00 a 00:00 hrs</p>
+        <p><small>&copy; 2026 Carozo's Chicken Grill. Todos los derechos reservados.</small></p>
+    </footer>
+
+</body>
+</html>

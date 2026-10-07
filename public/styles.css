@@ -1,0 +1,297 @@
+
+/* importamos fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Oswald:wght@500;700&display=swap');
+
+:root {
+    /* colorer implementados */
+    --color-tarjetas: #1f1a18;   /* cajas */
+    --color-texto: #f5f5f5;      /* BG */
+    --color-fuego: #ff5e00;      /* anaranjado brilloso */
+    --color-fuego-hover: #d14d00;/* anaranjado oscuroso pasar el mouse */
+}
+
+/* quitamos los margenes pa que este bonito*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Fondo con efecto brasas: Degradado radial que va del centro superior hacia afuera 
+    (le pedimos a la ia que nos ayude con esto lol) */
+    background: radial-gradient(circle at center top, #361500 0%, #121212 70%);
+    background-attachment: fixed; /* pa que se quede kieto el fondo cuando se baja */
+    
+    color: var(--color-texto);
+    line-height: 1.6;
+    
+    /* se aplica Montserrat a toda la página por defecto */
+    font-family: 'Montserrat', sans-serif; 
+}
+
+/* se aplica la fuente oswald a los titulos y asi */
+h1, h2, h3, .logo h2 {
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 1px; /* separa un poquitin las letras pa k este boniko */
+}
+
+
+/* encabezado y navegacion */
+.encabezado {
+    background-color: rgba(0, 0, 0, 0.8); /* negro con un poco de transparencia para k se vea bien frutiger aero */
+    padding: 20px 50px;
+    display: flex; /* Flexbox: Alinea los elementos en una fila */
+    justify-content: space-between; /* Manda el logo a la izq y el menú a la der */
+    align-items: center; /* Los centra verticalmente */
+    border-bottom: 2px solid var(--color-fuego);
+}
+
+.logo h2 {
+    color: var(--color-fuego);
+    font-size: 28px;
+    text-transform: uppercase;
+}
+
+.navegacion a {
+    color: var(--color-texto);
+    text-decoration: none; /* Quita el subrayado de los enlaces */
+    margin-left: 20px;
+    font-weight: 600;
+    transition: color 0.3s ease; /* Efecto suave al poner el mouse encima */
+}
+
+.navegacion a:hover {
+    color: var(--color-fuego); /* Cambia a naranja */
+}
+
+
+/* SECCIÓN BIENVENIDA */
+.bienvenida {
+    text-align: center;
+    padding: 100px 20px;
+    /* Quitamos el color de fondo estático para dejar ver el degradado del body */
+}
+
+.bienvenida h1 {
+    font-size: 45px;
+    color: var(--color-fuego);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.bienvenida p {
+    font-size: 20px;
+    margin-bottom: 40px;
+    color: #cccccc;
+}
+
+/* Diseño de los Botones */
+.boton-whatsapp, .boton-secundario {
+    display: inline-block;
+    background-color: var(--color-fuego);
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px; /* Bordes ligeramente redondeados */
+    transition: background-color 0.3s; /* Animación de color suave */
+}
+
+.boton-whatsapp:hover, .boton-secundario:hover {
+    background-color: var(--color-fuego-hover);
+}
+
+
+/* sección destacados */
+.destacados {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.destacados h2 {
+    font-size: 35px;
+    margin-bottom: 40px;
+}
+
+/* Contenedor tarjetas usando CSS Grid, grid es para que las tarjetas se acomoden bonito ps */
+.contenedor-platos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px; /* Espacio entre las tarjetas */
+    max-width: 1100px;
+    margin: 0 auto; /* Centra el bloque entero en la pantalla */
+}
+
+/* Diseño individual de cada tarjeta */
+.tarjeta {
+    background-color: var(--color-tarjetas);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #333; /* Borde sutil para darle profundidad */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.6); /* Sombra que elegancia la de francia */
+    transition: transform 0.3s; /* Efecto de elevación */
+}
+
+.tarjeta:hover {
+    transform: translateY(-8px); /* Sube la tarjeta al pasar el mouse */
+}
+
+.tarjeta img {
+    width: 100%; /* La imagen ocupa el 100% de su contenedor */
+    height: 200px;
+    object-fit: cover; /* Evita que la foto se estire o deforme */
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.tarjeta h3 {
+    color: var(--color-fuego);
+    margin-bottom: 10px;
+}
+
+.precio {
+    font-size: 24px;
+    font-weight: 600;
+    color: #ffb703; /* amarillo pipi para que les de hambre */
+    margin-top: 15px;
+}
+
+.ver-mas {
+    margin-top: 50px;
+}
+
+
+/*  pie */
+.pie-pagina {
+    background-color: #050505; /* Negro casi total para cerrar la página */
+    color: #888;
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 2px solid #222;
+}
+
+.pie-pagina h3 {
+    color: var(--color-fuego);
+    margin-bottom: 15px;
+}
+
+.pie-pagina p {
+    margin-bottom: 10px;
+}
+
+/*6. FORMULARIO DE RESERVAS*/
+.seccion-reserva {
+    padding: 0 20px 60px;
+    display: flex;
+    justify-content: center; /* Esto centra la caja del formulario perfectamente */
+}
+
+.contenedor-formulario {
+    background-color: var(--color-tarjetas);
+    padding: 40px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+    width: 100%;
+    max-width: 600px; /* Evita que el formulario sea gigante a lo ancho de la pantalla */
+}
+
+.grupo-input {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column; /* Coloca el texto (label) arriba y la cajita abajo */
+}
+
+.fila-inputs {
+    display: flex;
+    gap: 20px; /* Crea un espacio entre la caja de fecha y la de hora */
+}
+
+.fila-inputs .grupo-input {
+    flex: 1; /* Hace que ambas cajas midan exactamente la mitad */
+}
+
+.formulario label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--color-texto);
+}
+
+/* Diseño de las cajitas donde el usuario escribe */
+.formulario input, .formulario textarea {
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background-color: #121212; /* Fondo carbón para los inputs */
+    color: white; /* Letra blanca al escribir */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+
+/* efectito al escribir */
+.formulario input:focus, .formulario textarea:focus {
+    outline: none;
+    border-color: var(--color-fuego); /* borde naranja */
+}
+
+.aviso-privacidad {
+    text-align: center;
+    margin-top: 15px;
+    color: #888;
+}
+
+.vista-reservas {
+    width: min(1100px, calc(100% - 32px));
+    margin: 50px auto;
+}
+
+.vista-reservas h1 {
+    margin-bottom: 24px;
+    color: var(--color-fuego);
+    text-align: center;
+}
+
+.reserva-confirmacion {
+    margin: 0 auto 20px;
+    padding: 14px;
+    border: 1px solid var(--color-fuego);
+    border-radius: 6px;
+    background: var(--color-tarjetas);
+    text-align: center;
+}
+
+.tabla-reservas-contenedor {
+    overflow-x: auto;
+    margin-bottom: 24px;
+}
+
+.tabla-reservas {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--color-tarjetas);
+}
+
+.tabla-reservas th,
+.tabla-reservas td {
+    padding: 12px;
+    border: 1px solid #444;
+    text-align: left;
+    overflow-wrap: anywhere;
+}
+
+.tabla-reservas th {
+    background: var(--color-fuego);
+    color: #fff;
+}
+
+.sin-reservas {
+    margin-bottom: 24px;
+    text-align: center;
+    color: #ccc;
+}
+
+.vista-reservas > .boton-secundario {
+    display: table;
+    margin: 0 auto;
+}
